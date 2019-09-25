@@ -23,7 +23,7 @@ The code contains an api key to access data on the [Demo](https://geoar.it/Venue
 
 [Read more about setup](https://geoar.it/api-docs/index.html).
 
-[You can get your own ApiKey](https://geoar.it/Help/Details/📑~32~🔑-How-do-I-get-an-APi-KeyGet)
+[Get your own ApiKey](https://geoar.it/Help/Details/📑~32~🔑-How-do-I-get-an-APi-KeyGet)
 
 ```csharp
 using GeoARIt.Api;
