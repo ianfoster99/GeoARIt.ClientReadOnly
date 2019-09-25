@@ -1,0 +1,36 @@
+﻿@model Web.Models.VenueHotspotsViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <p class="h4">Hotspots for venue @Model.VenueTitle</p>
+</div>
+
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Guid</th>
+            <th scope="col">Name</th>
+            <th scope="col">Enabled from</th>
+            <th scope="col">Enbaled to</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @if (Model.Hotspots.Any())
+        {
+            foreach (var hotspot in Model.Hotspots)
+            {
+            <tr>
+                <th scope="row">@hotspot.Guid</th>
+                <td>@hotspot.Name</td>
+                <td>@hotspot.EnabledFrom</td>
+                <td>@hotspot.EnabledTo</td>
+                <td><img src="http://GeoAr.it/@hotspot.Prefab.ImageUrl" class="img-fluid img-thumbnail" /></td>
+            </tr>
+            }
+        }
+    </tbody>
+</table>
