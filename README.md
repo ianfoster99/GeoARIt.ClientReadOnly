@@ -19,8 +19,7 @@ Install-Package GeoARIt.Api
 <a name="getting-started"></a>
 ## Getting Started
 
-The code contains an api key to access data on the [Demo](https://geoar.it/Venue/Index) account at [https://GeoAr.it](https://geoar.it).
-([Read more about setup])(https://geoar.it/api-docs/index.html)
+The code contains an api key to access data on the [Demo](https://geoar.it/Venue/Index) account at [https://GeoAr.it](https://geoar.it).[Read more about setup](https://geoar.it/api-docs/index.html).
 [You can get your own ApiKey](https://geoar.it/Help/Details/📑~32~🔑-How-do-I-get-an-APi-KeyGet)
 
 ```csharp
