@@ -1,6 +1,6 @@
 # Visual Studio C# solution (GeoARIt.Client.sln) contains
-- Web client with sample code to access the GeoAr.it api endpoints. Just download, compile and run (Net Core 2.2)
-- Utilises GeoARIt.Api (Net Core 2.2) NuGet Library to access [GeoAR.it Api Endpoints](https://geoar.it/api-docs/index.html) 
+- C# Web client (Net Core 2.2) with sample code to utilising nuget library [GeoARIt.Api](https://www.nuget.org/packages/GeoARIt.Api) to access endpoints at [GeoAR.it Api Endpoints](https://geoar.it/api-docs/index.html) 
+Just download, compile and run
 
 <a name="dependencies"></a>
 ## Dependencies
