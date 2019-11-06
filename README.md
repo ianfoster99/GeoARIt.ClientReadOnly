@@ -23,7 +23,7 @@ The code contains an api key to access data on the [Demo](https://geoar.it/Venue
 
 [Read more about setup](https://geoar.it/api-docs/index.html). (Currently not working)
 
-[Get your own ApiKey](https://geoar.it/Help/Details/📑~32~🔑-How-do-I-get-an-APi-KeyGet)
+[Get your own ApiKey](https://geoar.it/Help/Details/32/🔑-How-do-I-get-an-APi-KeyGet)
 
 ```csharp
 using GeoARIt.Api;
@@ -45,8 +45,6 @@ namespace Web.Controllers
         /// <returns></returns>
         public async Task<IActionResult> Index()
         {
-            // https://geoar.it/Help/Details/📑~32~🔑-How-do-I-get-an-APi-Key
-
             if (Configuration.ApiKey.Count == 0)
             {
                 // Added here to show example. Api key configuration would normally be called once at startup (Startup.cs)
