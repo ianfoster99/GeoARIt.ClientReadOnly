@@ -1,7 +1,9 @@
 # Visual Studio C# solution (GeoARIt.Client.sln) contains
 - Web client with sample code to access Api (Net Core 2.2)
 - Utilises GeoARIt.Api (Net Core 2.2) NuGet Library to access GeoAR.it [Api Endpoints](https://geoar.it/api-docs/index.html) 
+- The code contains an api key to access data on the [Demo](https://geoar.it/Venue/Index) account at [https://GeoAr.it](https://geoar.it).
 
+- [Get your own ApiKey](https://geoar.it/Help/Details/32/🔑-How-do-I-get-an-APi-KeyGet)
 <a name="dependencies"></a>
 ## Dependencies
 - [RestSharp](https://www.nuget.org/packages/RestSharp) - 105.1.0 or later
@@ -16,12 +18,6 @@ Install-Package Newtonsoft.Json
 Install-Package JsonSubTypes
 Install-Package GeoARIt.Api
 ```
-<a name="getting-started"></a>
-## Getting Started
-
-The code contains an api key to access data on the [Demo](https://geoar.it/Venue/Index) account at [https://GeoAr.it](https://geoar.it).
-
-[Get your own ApiKey](https://geoar.it/Help/Details/32/🔑-How-do-I-get-an-APi-KeyGet)
 
 ```csharp
 using GeoARIt.Api;
