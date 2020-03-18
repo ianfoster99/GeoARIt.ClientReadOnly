@@ -1,6 +1,6 @@
 # Visual Studio C# solution (GeoARIt.Client.sln) contains
 - Web client with sample code to access Api (Net Core 2.2)
-- Utilises [GeoARIt.Api](https://www.nuget.org/packages/GeoARIt.Api/) ([GitHub](https://editor.swagger.io/))(Net Core 2.2) NuGet Library to access GeoAR.it [Api Endpoints](https://geoar.it/api-docs/index.html) 
+- Utilises GeoARIt.Api (Net Core 2.2) NuGet Library to access GeoAR.it [Api Endpoints](https://geoar.it/api-docs/index.html) 
 
 <a name="dependencies"></a>
 ## Dependencies
@@ -19,7 +19,11 @@ Install-Package GeoARIt.Api
 <a name="getting-started"></a>
 ## Getting Started
 
-The code contains an api key for the Demo account. [You can get your own ApiKey](https://geoar.it/Help/Details/📑~32~🔑-How-do-I-get-an-APi-KeyGet)
+The code contains an api key to access data on the [Demo](https://geoar.it/Venue/Index) account at [https://GeoAr.it](https://geoar.it).
+
+[Read more about setup](https://geoar.it/api-docs/index.html). (Currently not working)
+
+[Get your own ApiKey](https://geoar.it/Help/Details/32/🔑-How-do-I-get-an-APi-KeyGet)
 
 ```csharp
 using GeoARIt.Api;
@@ -41,8 +45,6 @@ namespace Web.Controllers
         /// <returns></returns>
         public async Task<IActionResult> Index()
         {
-            // https://geoar.it/Help/Details/📑~32~🔑-How-do-I-get-an-APi-Key
-
             if (Configuration.ApiKey.Count == 0)
             {
                 // Added here to show example. Api key configuration would normally be called once at startup (Startup.cs)
