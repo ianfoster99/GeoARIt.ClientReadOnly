@@ -45,24 +45,26 @@ namespace Web.Controllers
         /// <returns></returns>
         public async Task<IActionResult> Index()
         {
-            if (Configuration.ApiKey.Count == 0)
-            {
-                // Added here to show example. Api key configuration would normally be called once at startup (Startup.cs)
-                // Don't code ApiKeys in production code https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-2.2&tabs=windows
-                Configuration.ApiKey.Add("Authorization", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjU1MWEyZTgzLWM0MzgtNDEyNi1hMGY4LWJkOWYxM2VkMWY4NCIsIm5iZiI6MTU2NjI2MjQ4NCwiZXhwIjoxNTk3Nzk4NDgxLCJpYXQiOjE1NjYyNjI0ODR9.jE3HqDaQpd4WGglTz1qYkEWsCXLIux0py0alP0SSGxg");
-                Configuration.ApiKeyPrefix.Add("Authorization", "Bearer");
-            }
+            // https://geoar.it/Help/Details/📑~32~🔑-How-do-I-get-an-APi-Key
 
+            var version = "1";
             int rnd = new Random().Next(1, demoVenueGuids.Count + 1);
+
+            // Added here to show example.Api key configuration would normally be called once at startup(Startup.cs)
+            // Don't code ApiKeys in production code https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-2.2&tabs=windows           
+            var authKey = " eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjU1MWEyZTgzLWM0MzgtNDEyNi1hMGY4LWJkOWYxM2VkMWY4NCIsIm5iZiI6MTU2NjI2MjQ4NCwiZXhwIjoxNTk3Nzk4NDgxLCJpYXQiOjE1NjYyNjI0ODR9.jE3HqDaQpd4WGglTz1qYkEWsCXLIux0py0alP0SSGxg";         
+            var configuration = new Configuration();
+            configuration.ApiKeyPrefix.Add("Authorization", $"Bearer {authKey}");            
 
             var vm = new VenueHotspotsViewModel()
             {
                 VenueGuid = demoVenueGuids[rnd - 1],
-                Venue = new VenueApi().Venue(demoVenueGuids[rnd - 1]),
-                Hotspots = new HotspotsForVenueApi().HotspotsForVenue(demoVenueGuids[rnd - 1], 100)
+                Venue = await new VenueApi(configuration).VenueAsync(demoVenueGuids[rnd - 1], version, ""),
+                Hotspots = await new HotspotsForVenueApi(configuration).HotspotsForVenueAsync(demoVenueGuids[rnd - 1], 100, version, "")
             };
 
             return View(vm);
+
         }
 
         private readonly List<Guid> demoVenueGuids = new List<Guid>
@@ -77,7 +79,6 @@ namespace Web.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
-}
 }
 ```
 
